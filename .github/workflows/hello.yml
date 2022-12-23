@@ -6,26 +6,15 @@ on:
   pull_request:
     branches: master
 jobs:
-  job1:
-    name: Ubuntu
+  main:
     runs-on: ubuntu-latest
     steps:
-      - run : date
-  job2:
-    name: Windows
-    runs-on: windows-latest
-    steps:
-      - run : date
-  job3:
-    name: MacOs
-    runs-on: macos-latest
-    steps:
-      - run : date
-  job4:
-    name: Depends
-    needs: [job1,job2,job3]
-    runs-on: ubuntu-latest
-    steps:
-      - run : date
-
-
+      - name: Check out the code
+        uses: actions/checkout@v2
+      - name: Upload the artiface
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{env.ARTIFACT_NAME}}
+          path: .
+  
+  
