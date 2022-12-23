@@ -2,7 +2,7 @@
 
 A brief discription about github actions
 
-###### First Github Action
+#### First Github Action
     name: Hello
     
     on: 	#Event
