@@ -19,8 +19,8 @@ A brief discription about github actions
             uses: actions/checkout@v2	#Action
           - name: Step two
             run: |
-				echo "Hello"
-				echo "World"
+		echo "Hello"
+		echo "World"
       job2:
         name: Second job
         runs-on: windows-latest
