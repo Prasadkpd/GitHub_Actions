@@ -31,3 +31,38 @@ A brief discription about github actions
           - name: Step two
             run: "Get-ChildItem Env: | Sort-Object Name"
     
+###### Second Github Action
+
+- Push Trigger
+- Multiple runners
+- Job Dependencies
+
+    name: Second Action
+    
+    on: 
+      push:
+        branches: master
+      pull_request:
+        branches: master
+    jobs:
+      job1:
+        name: Ubuntu
+        runs-on: ubuntu-latest
+        steps:
+          - run : date
+      job2:
+        name: Windows
+        runs-on: windows-latest
+        steps:
+          - run : date
+      job3:
+        name: MacOs
+        runs-on: macos-latest
+        steps:
+          - run : date
+      job4:
+        name: Depends
+        needs: [job1,job2,job3]
+        runs-on: ubuntu-latest
+        steps:
+          - run : date
