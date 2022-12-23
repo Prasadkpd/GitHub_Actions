@@ -1,6 +1,10 @@
 name: Hello
 
-on: push
+on: 
+  push:
+    branches: master
+  pull_request:
+    branches: master
 jobs:
   job1:
     name: First job
