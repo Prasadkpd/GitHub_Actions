@@ -137,6 +137,7 @@ https://github.com/automate6500/passing-arguments-to-an-action/blob/master/.gith
           run: aws s3api list-buckets
     
  #### Using Artifacts
-    
-    https://github.com/automate6500/using-artirfacts
+ 
+  https://github.com/automate6500/using-artirfacts
+
     
