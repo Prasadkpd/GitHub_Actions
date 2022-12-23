@@ -1,4 +1,4 @@
-name: Hello
+name: Second Action
 
 on: 
   push:
@@ -7,21 +7,25 @@ on:
     branches: master
 jobs:
   job1:
-    name: First job
+    name: Ubuntu
     runs-on: ubuntu-latest
     steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: |
-          echo "Hello"
-          echo "World"
+      - run : date
   job2:
-    name: Second job
+    name: Windows
     runs-on: windows-latest
-    needs: job1
     steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: "Get-ChildItem Env: | Sort-Object Name"
+      - run : date
+  job3:
+    name: MacOs
+    runs-on: macos-latest
+    steps:
+      - run : date
+  job4:
+    name: Depends
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    steps:
+      - run : date
+
+
