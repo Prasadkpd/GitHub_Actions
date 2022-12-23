@@ -67,6 +67,6 @@ A brief discription about github actions
         steps:
           - run : date
 
-###### Passign Argument to and Action
+#### Passign Argument to and Action
 
 https://github.com/automate6500/passing-arguments-to-an-action/blob/master/.github/workflows/build-tomcat.yml
