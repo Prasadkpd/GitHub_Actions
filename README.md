@@ -114,4 +114,24 @@ https://github.com/automate6500/passing-arguments-to-an-action/blob/master/.gith
               echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
               echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
               echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
-    
+   
+#### Using Secret   
+   
+name: secrets
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+    - name: List S3 Buckets
+      run: aws s3api list-buckets
