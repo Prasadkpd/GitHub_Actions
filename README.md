@@ -31,7 +31,7 @@ A brief discription about github actions
           - name: Step two
             run: "Get-ChildItem Env: | Sort-Object Name"
     
-###### Second Github Action
+#### Second Github Action
 
 - Push Trigger
 - Multiple runners
@@ -66,3 +66,7 @@ A brief discription about github actions
         runs-on: ubuntu-latest
         steps:
           - run : date
+
+###### Passign Argument to and Action
+
+https://github.com/automate6500/passing-arguments-to-an-action/blob/master/.github/workflows/build-tomcat.yml
