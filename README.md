@@ -1,7 +1,3 @@
-# GitHub Actions
-
-A brief discription about github actions
-
 #### First Github Action
     name: Hello
     
@@ -135,6 +131,7 @@ https://github.com/automate6500/passing-arguments-to-an-action/blob/master/.gith
             aws-region: ${{ secrets.AWS_REGION }}
         - name: List S3 Buckets
           run: aws s3api list-buckets
+    
     
  #### Using Artifacts
  
